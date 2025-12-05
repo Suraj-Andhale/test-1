@@ -1,1 +1,37 @@
-its me , meaning of suraj is sun
+
+CI Stages
+│
+├── pre
+│   └── version.yml
+│
+├── build
+│   ├── gradle_java.yml   (Backend)
+│   └── vite-react.yml    (Frontend)
+│
+├── test
+│   └── sonar_java.yml
+│
+├── pre-verify
+│   └── fortify_sast.yml
+│
+├── release
+│   └── release.yml
+│
+└── dockerbuild
+    └── dockerbuild.yml
+
+
+
+
+CD Stages
+│
+├── deploy
+│   └── templates/microservices/
+│       └── gradle_java.yml
+│
+├── deployment
+│   └── commit.yml
+│
+└── validate
+    └── deploy → verify
+        └── helm2.yml
