@@ -35,3 +35,7 @@ CD Stages
 └── validate
     └── deploy → verify
         └── helm2.yml
+
+
+
+replicas: {{ (index (index ($.Values.global | default dict) "replicas" | default dict) "epay_admin_service") | default 1 | int }}
